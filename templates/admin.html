@@ -1,0 +1,14 @@
+html
+{% extends "base.html" %}
+{% block content %}
+<h3>Admin Panel</h3>
+<form method="post" class="mb-3">
+  <input name="user_id" placeholder="User ID to delete" class="form-control d-inline-block w-auto">
+  <button class="btn btn-danger">Delete User</button>
+</form>
+<table class="table"><thead><tr><th>ID</th><th>Username</th><th>Admin</th></tr></thead><tbody>
+{% for u in users %}
+  <tr><td>{{ u['id'] }}</td><td>{{ u['username'] }}</td><td>{{ 'Yes' if u['is_admin'] else 'No' }}</td></tr>
+{% endfor %}
+</tbody></table>
+{% endblock %}

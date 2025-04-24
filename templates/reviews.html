@@ -1,0 +1,15 @@
+html
+{% extends "base.html" %}
+{% block content %}
+<h3>Reviews for {{ product['name'] }}</h3>
+<form method="post" class="mb-3">
+  <input name="user" placeholder="Your name" class="form-control mb-2">
+  <textarea name="content" placeholder="Your review" class="form-control mb-2"></textarea>
+  <button class="btn btn-primary">Submit Review</button>
+</form>
+<ul class="list-group">
+  {% for c in reviews %}
+  <li class="list-group-item"><strong>{{ c['user'] }}</strong>: {{ c['content'] }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

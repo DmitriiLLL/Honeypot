@@ -1,0 +1,22 @@
+html
+{% extends "base.html" %}
+{% block content %}
+<h3>Search Products</h3>
+<form method="post" class="mb-3">
+  <input name="query" value="{{ query }}" placeholder="Product name" class="form-control">
+  <button class="btn btn-success mt-2">Search</button>
+</form>
+{% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+{% if results %}
+<table class="table"><thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Review</th></tr></thead><tbody>
+  {% for r in results %}
+  <tr>
+    <td>{{ r['id'] }}</td>
+    <td>{{ r['name'] }}</td>
+    <td>${{ r['price'] }}</td>
+    <td><a class="btn btn-sm btn-link" href="{{ url_for('reviews', product_id=r['id']) }}">Reviews</a></td>
+  </tr>
+  {% endfor %}
+</tbody></table>
+{% endif %}
+{% endblock %}
