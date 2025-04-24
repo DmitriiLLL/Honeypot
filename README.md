@@ -12,7 +12,7 @@
 
 </td>
     <td align="center" style="width: 220px;">
-      <img src="./59952185-e74d-46f8-811f-a54900e3dda4.png" alt="Honeypot image" width="200"/>
+      <img src="./Honeypot.png" width="400"/>
     </td>
   </tr>
 </table>
